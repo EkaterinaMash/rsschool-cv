@@ -19,12 +19,86 @@ My name is Ekaterina, I'm 27 years old. I want to become a frontend developer, b
 
 ## Example of code
 
-```
-function multiply(a, b){
- return (a * b ) ;
-};
+HTML part:
 
-multiply (3,4);
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PetStory</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<header>
+    <div class="logo">
+        <a href="" class="disabled">
+            <h1>PetStory online</h1>
+            <img src="../../assets/icons/bamboo.png">
+        </a>
+    </div>
+    <div class="hamb">
+        <span></span><span></span><span></span>
+    </div>
+    <nav>
+        <ul class="navigation">
+            <li><a href="" class="disabled active">About</a></li>
+            <li><a href="">Map</a></li>
+            <li><a href="">Zoos</a></li>
+            <li><a href="../donate/index.html">Donate</a></li>
+            <li><a href="">Contact us</a></li>
+        </ul>
+    </nav>
+    <div class="popup">
+        <div class="close-btn">
+            <span class="sp1"></span><span class="sp2"></span>
+        </div>
+    </div>
+    <a href="https://www.figma.com/file/jfEFwkXVj1WRq7sUHDr8os/PetStory-online" class="designed">Designed by ©</a>
+</header>
+
+```
+
+JS part:
+
+```
+const hamb = document.querySelector(".hamb");
+const popup = document.querySelector(".popup");
+const menu = document.querySelector(".navigation").cloneNode(1);
+const logo = document.querySelector(".logo").cloneNode(1);
+const design = document.querySelector(".designed");
+const closeBtn = document.querySelector(".close-btn");
+
+hamb.addEventListener("click", openMenu);
+
+function toggleMenuClasses() {
+    popup.classList.toggle("open");
+    menu.classList.toggle("active");
+    design.classList.toggle("active");
+    logo.classList.toggle("active");
+}
+
+function openMenu(e) {
+    
+    e.preventDefault();
+    toggleMenuClasses();
+    addMenuElements()
+}
+
+function addMenuElements() {
+    popup.appendChild(logo);
+    popup.appendChild(menu);
+    popup.appendChild(design);
+}
+
+closeBtn.addEventListener("click", closeMenu);
+
+function closeMenu(e) {
+    e.preventDefault();
+    toggleMenuClasses();
+}
 
 ```
 ## Experience
