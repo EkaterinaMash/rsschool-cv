@@ -1,0 +1,32 @@
+html {
+    font-size: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+    padding: 10px;
+}
+
+h2, h3 {
+    font-size: 2.4rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+p, li {
+    font-size: 1.6rem;
+}
+
+.show-code:hover {
+    cursor: pointer;
+}
+
+.code-example {
+    display: none;
+}
+
+.code-example.show {
+    display: block;
+} 

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekaterina Mashinskaia CV</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="main-info">
+        <div class="about">
+            <h2>About myself</h2>
+            <p>My name is Ekaterina, I’m 28 years old. I want to become a frontend developer, because I would like to create usable and friendly services. Frontend opens a lot of perspectives for development of skills and knowledge. It seems interesting for me to create something new or solve problems, finding different and the most optimal ways of solving tasks. Frontend is a new sphere for me and I’m excited to get new knowledge and apply them.</p>
+        </div>
+    </section>
+    <section class="skills">
+        <h2>Knowledge and skills</h2>
+        <ul>
+            <li>HTML basics - tags, headers, paragraphs, lists, links, images</li>
+            <li>CSS basics - selectors, properties, fonts, colors, images</li>
+            <li>JavaScript basics - classes, attributes, functions, loops</li>
+            <li>Git basics</li>
+        </ul>
+        <h3 id="show-code">Show example of code</h3>
+        <div class="code-example">
+            <pre>
+                <code>
+                    function workWithMenuPopup() {
+                        let menuPopup = document.querySelector('.popup-menu');
+                        let menuPopupBlocker = document.querySelector('.popup-blocker-menu');
+                        let popupLogo = document.querySelector('.popup-logo');
+                        let burgerMenu = document.querySelector('.burger-menu');
+                        let logo = document.querySelector('.logo').cloneNode(1);
+                        let menu = document.querySelector('.menu').cloneNode(1);
+                        let popupBurger = burgerMenu.cloneNode(1);
+                        let menuLinks = Array.from(menu.children);
+                    
+                        burgerMenu.onclick = openPopup;
+                        menuPopupBlocker.onclick = closePopup;
+                        popupBurger.onclick = closePopup;
+                    
+                        function openPopup(e) {
+                            e.preventDefault();
+                            toggleMenuClasses();
+                            popupLogo.appendChild(logo);
+                            popupLogo.appendChild(popupBurger);
+                            menuPopup.appendChild(menu);
+                    
+                            menuPopup.animate([
+                                {transform: 'translate(320px)'},
+                                {transform: 'translate(0)'}
+                            ], longAnimationDuration);
+                            popupBurger.animate([
+                                {transform: 'rotate(0)'},
+                                {transform: 'rotate(90deg)'}
+                            ], {
+                                duration: shortAnimationDuration,
+                                delay: longAnimationDuration,
+                                fill: 'forwards'
+                            })
+                        }
+                    
+                        function closePopup(e) {
+                            e.preventDefault();
+                            popupBurger.animate([
+                                {transform: 'rotate(90deg)'},
+                                {transform: 'rotate(0)'}
+                            ], {
+                                duration: shortAnimationDuration,
+                                fill: 'forwards'
+                            })
+                            menuPopup.animate([
+                                {transform: 'translate(0)'},
+                                {transform: 'translate(320px)'}
+                            ], {
+                                duration: longAnimationDuration,
+                                delay: shortAnimationDuration,  
+                            });
+                            setTimeout(toggleMenuClasses, (longAnimationDuration + shortAnimationDuration));
+                        }
+                    
+                        menuLinks.forEach(menuLink => {
+                            menuLink.onclick = toggleMenuClasses;
+                        });
+                    
+                        function toggleMenuClasses() {
+                            menuPopup.classList.toggle('active');
+                            menuPopupBlocker.classList.toggle('active');
+                            menu.classList.toggle('show');
+                            body.classList.toggle('noscroll');
+                        }
+                    }
+                </code>
+            </pre>
+        </div> 
+    </section>
+    <section class="experience">
+        <h2>Experience</h2>
+        <ul>
+            <li>Coding exercises at HTML Academy</li>
+            <li>Codewars tasks(strings, arrays, objects, functions)</li>
+        </ul>
+        <h2>Education</h2>
+        <ul>
+            <li>Ryazan State Radio Engineering University - bachelor of automation and control of production</li>
+            <li>Self study of HTML, CSS, JavaScript</li>
+        </ul>
+        <h2>English level</h2>
+        <p>B2</p>
+    </section>
+    <footer>
+        <a href="https://github.com/EkaterinaMash">My Github</a>
+    </footer>
+    <script>
+        document.getElementById('show-code').onclick = function() {
+            document.querySelector('.code-example').classList.toggle('show');
+        } 
+    </script>
+</body>
+</html>
