@@ -9,12 +9,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main>
+<main>
     <section class="main-info">
-        <h2>About myself</h2>   
+        <h2>About myself</h2>
         <div class="about">
             <img src="my-photo.jpg" alt="Ekaterina photo" class="my-photo">
-            <p>My name is Ekaterina, I’m 28 years old. I want to become a frontend developer, because I would like to create usable and friendly services. Frontend opens a lot of perspectives for development of skills and knowledge. It seems interesting for me to create something new or solve problems, finding different and the most optimal ways of solving tasks. Frontend is a new sphere for me and I’m excited to get new knowledge and apply them.</p>
+            <p>My name is Ekaterina, I’m 28 years old. I want to become a frontend developer, because I would like to
+                create usable and friendly services. Frontend opens a lot of perspectives for development of skills and
+                knowledge. It seems interesting for me to create something new or solve problems, finding different and
+                the most optimal ways of solving tasks. Frontend is a new sphere for me and I’m excited to get new
+                knowledge and apply them.</p>
         </div>
     </section>
     <section class="skills">
@@ -38,7 +42,7 @@
                         let menu = document.querySelector('.menu').cloneNode(1);
                         let popupBurger = burgerMenu.cloneNode(1);
                         let menuLinks = Array.from(menu.children);
-                    
+                
                         burgerMenu.onclick = openPopup;
                         menuPopupBlocker.onclick = closePopup;
                         popupBurger.onclick = closePopup;
@@ -96,7 +100,7 @@
                     }
                 </code>
             </pre>
-        </div> 
+        </div>
     </section>
     <section class="experience">
         <h2>Experience</h2>
@@ -112,22 +116,22 @@
         <h2>English level</h2>
         <p>B2</p>
     </section>
-</main> 
-    <footer>
-        <a href="https://github.com/EkaterinaMash">My GitHub page</a>
-        <p class="date"></p>
-        <a href="https://app.rs.school/"><img src="logo-rsschool3.png" alt="" class="logo"></a>
-    </footer>
-    <script>
-        document.getElementById('show-code').onclick = function() {
-            document.querySelector('.code-example').classList.toggle('show');
-        } 
-        let date = document.querySelector('.date');
-        let newDate = new Date();
-        let day = newDate.getDate();
-        let month = newDate.getMonth() + 1;
-        let year = newDate.getFullYear();
-        date.textContent = `${day}/${month}/${year}`; 
-    </script>
+</main>
+<footer>
+    <a href="https://github.com/EkaterinaMash">My GitHub page</a>
+    <p class="date"></p>
+    <a href="https://app.rs.school/"><img src="logo-rsschool3.png" alt="" class="logo"></a>
+</footer>
+<script>
+    document.getElementById('show-code').onclick = function () {
+        document.querySelector('.code-example').classList.toggle('show');
+    }
+    let date = document.querySelector('.date');
+    let newDate = new Date();
+    let day = newDate.getDate();
+    let month = newDate.getMonth() + 1;
+    let year = newDate.getFullYear();
+    date.textContent = `${day}/${month}/${year}`;
+</script>
 </body>
 </html>
