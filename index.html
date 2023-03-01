@@ -29,78 +29,6 @@
             <li>JavaScript basics - classes, attributes, functions, loops</li>
             <li>Git basics</li>
         </ul>
-        <h3 id="show-code">Show example of code</h3>
-        <div class="code-example">
-            <pre>
-                <code>
-                    function workWithMenuPopup() {
-                        let menuPopup = document.querySelector('.popup-menu');
-                        let menuPopupBlocker = document.querySelector('.popup-blocker-menu');
-                        let popupLogo = document.querySelector('.popup-logo');
-                        let burgerMenu = document.querySelector('.burger-menu');
-                        let logo = document.querySelector('.logo').cloneNode(1);
-                        let menu = document.querySelector('.menu').cloneNode(1);
-                        let popupBurger = burgerMenu.cloneNode(1);
-                        let menuLinks = Array.from(menu.children);
-                
-                        burgerMenu.onclick = openPopup;
-                        menuPopupBlocker.onclick = closePopup;
-                        popupBurger.onclick = closePopup;
-                    
-                        function openPopup(e) {
-                            e.preventDefault();
-                            toggleMenuClasses();
-                            popupLogo.appendChild(logo);
-                            popupLogo.appendChild(popupBurger);
-                            menuPopup.appendChild(menu);
-                    
-                            menuPopup.animate([
-                                {transform: 'translate(320px)'},
-                                {transform: 'translate(0)'}
-                            ], longAnimationDuration);
-                            popupBurger.animate([
-                                {transform: 'rotate(0)'},
-                                {transform: 'rotate(90deg)'}
-                            ], {
-                                duration: shortAnimationDuration,
-                                delay: longAnimationDuration,
-                                fill: 'forwards'
-                            })
-                        }
-                    
-                        function closePopup(e) {
-                            e.preventDefault();
-                            popupBurger.animate([
-                                {transform: 'rotate(90deg)'},
-                                {transform: 'rotate(0)'}
-                            ], {
-                                duration: shortAnimationDuration,
-                                fill: 'forwards'
-                            })
-                            menuPopup.animate([
-                                {transform: 'translate(0)'},
-                                {transform: 'translate(320px)'}
-                            ], {
-                                duration: longAnimationDuration,
-                                delay: shortAnimationDuration,  
-                            });
-                            setTimeout(toggleMenuClasses, (longAnimationDuration + shortAnimationDuration));
-                        }
-                    
-                        menuLinks.forEach(menuLink => {
-                            menuLink.onclick = toggleMenuClasses;
-                        });
-                    
-                        function toggleMenuClasses() {
-                            menuPopup.classList.toggle('active');
-                            menuPopupBlocker.classList.toggle('active');
-                            menu.classList.toggle('show');
-                            body.classList.toggle('noscroll');
-                        }
-                    }
-                </code>
-            </pre>
-        </div>
     </section>
     <section class="experience">
         <h2>Experience</h2>
@@ -120,12 +48,9 @@
 <footer>
     <a href="https://github.com/EkaterinaMash">My GitHub page</a>
     <p class="date"></p>
-    <a href="https://app.rs.school/"><img src="logo-rsschool3.png" alt="" class="logo"></a>
+    <a href="https://app.rs.school/"><img src="logo-rsschool3.png" alt="Rsschool logo" class="logo"></a>
 </footer>
 <script>
-    document.getElementById('show-code').onclick = function () {
-        document.querySelector('.code-example').classList.toggle('show');
-    }
     let date = document.querySelector('.date');
     let newDate = new Date();
     let day = newDate.getDate();
