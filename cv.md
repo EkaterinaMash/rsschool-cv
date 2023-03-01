@@ -9,7 +9,7 @@ Discord: EkaterinaMash#8912 \
 Phone: +37066596599
  
 ## About myself
-My name is Ekaterina, I'm 27 years old. I want to become a frontend developer, because I would like to create usable and friendly services. Frontend opens a lot of perspectives for development of skills and knowledge. It seems interesting for me to create something new or solve problems, finding different and the most optimal ways of solving tasks. Frontend is a new sphere for me and I'm excited to get new knowledge and apply them. 
+My name is Ekaterina, I'm 28 years old. I want to become a frontend developer, because I would like to create usable and friendly services. Frontend opens a lot of perspectives for development of skills and knowledge. It seems interesting for me to create something new or solve problems, finding different and the most optimal ways of solving tasks. Frontend is a new sphere for me and I'm excited to get new knowledge and apply them. 
    
 ## Knowledge and skills
 * HTML basics - tags, headers, paragraphs, lists, links, images
